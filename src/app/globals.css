@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* פלטת ניטרליים חמים */
+  --color-sand-50: #faf8f5;
+  --color-sand-100: #f3efe9;
+  --color-sand-200: #e8e2d8;
+  --color-sand-300: #d6ccbd;
+  --color-sand-400: #b5a894;
+  --color-sand-500: #8c8071;
+
+  --color-ink-400: #8a8378;
+  --color-ink-500: #6b6459;
+  --color-ink-600: #4a453d;
+  --color-ink-700: #33302a;
+  --color-ink-800: #232019;
+  --color-ink-900: #17150f;
+
+  --font-sans: var(--font-heebo), "Segoe UI", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-sand-50);
+  color: var(--color-ink-800);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* מרווח עליון לעוגני הסקשנים כדי שהניווט הדביק לא יסתיר את הכותרות */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+::selection {
+  background-color: var(--color-ink-800);
+  color: var(--color-sand-50);
+}
+
+/* מיקוד נראה לניווט מקלדת */
+:focus-visible {
+  outline: 2px solid var(--color-ink-800);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* חץ אחיד לשדות בחירה, ממוקם בצד שמאל בפריסת RTL */
+.select-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b6459' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 7.5 5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+  background-size: 1.15rem;
+  padding-left: 2.75rem;
+}
